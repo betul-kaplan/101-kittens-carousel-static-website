@@ -58,7 +58,7 @@ Resources:
         cd /var/www/html
         dnf install git -y
         git clone https://github.com/betul-kaplan/101-kittens-carousel-static-website.git
-        mv 101-kittens-carousel-static-website/static-website/* .
+        mv 101-kittens-carousel-static-website/static-web/* .
         systemctl restart httpd
         systemctl enable httpd
           
