@@ -13,7 +13,7 @@ Parameters:
   instanceType:
     Description: Enter t2.micro, m1.small, or m1.large. Default is t2.micro.
     Type: String
-    Default: t3.micro
+    Default: t2.micro
     AllowedValues:
       - t2.micro
       - t3.small
@@ -22,7 +22,7 @@ Parameters:
   imageID:
     Description: Name of a Parameter Store parameter that stores the ID of the Amazon Machine Image (AMI).
     Type: 'AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>'
-    Default: '/aws/service/ami-amazon-linux-latest/al2023-ami-kernel-6.1-arm64'    
+    Default: '/aws/service/ami-amazon-linux-latest/al2023-ami-kernel-6.1-x86_64'    
 
 Resources:
   mysecGrp:
@@ -57,9 +57,9 @@ Resources:
         chmod 777 /var/www/html
         cd /var/www/html
         dnf install git -y
-        git clone hhttps://github.com/betul-kaplan/101-kittens-carousel-static-website.git
+        git clone https://github.com/betul-kaplan/101-kittens-carousel-static-website.git
         mv 101-kittens-carousel-static-website/static-website/* .
-        systemctl start httpd
+        systemctl restart httpd
         systemctl enable httpd
           
 Outputs:
