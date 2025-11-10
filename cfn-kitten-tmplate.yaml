@@ -65,6 +65,6 @@ Resources:
 Outputs:
   webSiteURL:
     Description: URL of Website
-    Value:
+    Value: !Sub
       - http://${PublicDNS}
       - PublicDNS: !GetAtt MyWebServer.PublicDnsName
